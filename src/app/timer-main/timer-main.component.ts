@@ -18,7 +18,7 @@ export class TimerMainComponent {
 
   /*
   * 重置倒數計時器
-  * @param o: HeroTimerComponent
+  * @param o: TimerMainComponent
   * Todos :
   **/
   reset = (o: TimerMainComponent): void => {
@@ -48,10 +48,10 @@ export class TimerMainComponent {
     const initState = !localStorage.hasOwnProperty(name) || isNaN(storeNumber);
     const retuNumber = initState ? value : storeNumber;
     console.log('init ->', retuNumber);
-    // console.log(Object.getOwnPropertyNames(HeroTimerComponent.prototype));
+    // console.log(Object.getOwnPropertyNames(TimerMainComponent.prototype));
     return retuNumber;
   }
-  setLocalSession(name: string = '', value: string) {
+  setLocalSession(name: string, value: string) {
     localStorage.setItem(name, value);
   }
 
