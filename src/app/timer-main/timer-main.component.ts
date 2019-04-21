@@ -2,19 +2,19 @@ import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-timer-main',
-  templateUrl: './hero-timer.component.html',
-  styleUrls: ['./hero-timer.component.css']
+  templateUrl: './timer-main.component.html',
+  styleUrls: ['./timer-main.component.css']
 })
 
 export class TimerMainComponent {
-  defaultValue = 1 * 60 * .1;
+  defaultValue = 1 * 60 * 20;
   stopTimeValue = this.defaultValue * 1000 + 500;
   intervalTime = 1000;
   countDownNumber = this.defaultValue;
   clockTimer: any;
   countDownClock = '';
   sessionName = 'timer';
-  clock = '2019-04-30 24:60:60';
+  clock = '';
 
   /*
   * 重置倒數計時器
@@ -67,7 +67,7 @@ export class TimerMainComponent {
     const hourStr = this.padLeft(date.getHours(), 2);
     const minsStr = this.padLeft(date.getMinutes(), 2);
     const secondStr = this.padLeft(date.getSeconds(), 2);
-    const dateStr = `${yearStr}-${monthStr}-${dayStr} ${hourStr}:${minsStr}:${secondStr}`;
+    const dateStr = `${hourStr}:${minsStr}:${secondStr}`;
     return dateStr;
   }
 
